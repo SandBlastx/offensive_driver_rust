@@ -1,0 +1,27 @@
+[package]
+name = "windows-kernel-sys"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cty = "0.2.2"
+
+
+
+[build-dependencies]
+thiserror = "1.0.45"
+winreg = "0.50.0"
+bindgen = "0.66.1"
+failure = "0.1.8"
+cc = "1.0.82"
+windows-kernel-build = { path = "../windows-kernel-build" }
+
+
+[features]
+default = ["intrin", "ntoskrnl", "auxklib"  ]
+intrin = []
+ntoskrnl = []
+netio = []
+auxklib = []
